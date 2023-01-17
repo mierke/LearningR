@@ -23,7 +23,6 @@ library(tidyverse)
 library(NHANES)
 
 # Looking at data ---------------------------------------------------------
-
 glimpse(NHANES)
 colnames(NHANES)
 
@@ -46,3 +45,30 @@ nhanes_small <- select(
   Education
 )
 nhanes_small
+
+# Fixing variable names ---------------------------------------------------
+
+nhanes_small <- rename_with(
+  nhanes_small,
+  snakecase::to_snake_case
+)
+nhanes_small
+
+# rename one variable at a time
+nhanes_small <- rename(
+  nhanes_small,
+  sex = gender
+)
+
+# Piping ------------------------------------------------------------------
+
+# Ctrl + Shift + M for pipe %>%
+
+colnames(nhanes_small)
+
+nhanes_small %>%
+  colnames()
+
+nhanes_small %>%
+  select(phys_active) %>%
+  rename(physically_active = phys_active)
