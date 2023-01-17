@@ -76,3 +76,8 @@ This analysis **is** *fun*.
 
 # Discussion
 Discussion discussion **discussion** discussion *discussion*.
+
+## Exercise 8.10 - Inserting an image
+![A very chill cat](images/chill-cat.jpg){#fig-cat}
+
+Chill cat in @fig-cat
