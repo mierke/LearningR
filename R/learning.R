@@ -14,13 +14,35 @@ str(airquality)
 
 summary(airquality)
 
-2 + 2 #control + shift + P to get to options -> style active file
+2 + 2 # control + shift + P to get to options -> style active file
 
 2 + 2 # or ctrl + shift + A
 
 # Packages ----------------------------------------------------------------
 library(tidyverse)
+library(NHANES)
 
-#This will be used for testing out Git
+# Looking at data ---------------------------------------------------------
 
+glimpse(NHANES)
+colnames(NHANES)
 
+select(NHANES, Age, Weight, BMI)
+select(NHANES, -HeadCirc) # To exclude a variable
+
+select(NHANES, starts_with("BP"))
+select(NHANES, ends_with("Day"))
+select(NHANES, contains("Age"))
+
+nhanes_small <- select(
+  NHANES,
+  Age,
+  Gender,
+  BMI,
+  Diabetes,
+  PhysActive,
+  BPSysAve,
+  BPDiaAve,
+  Education
+)
+nhanes_small
