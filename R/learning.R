@@ -94,4 +94,42 @@ nhanes_small %>%
 # rename(blood_pressure, bp_systolic = bp_sys)
 
 nhanes_small %>%
-  select(starts_with("bp_"))
+  select(starts_with("bp_")) %>%
+  rename(bp_systolic = bp_sys_ave)
+
+# Filtering rows ----------------------------------------------------------
+nhanes_small %>%
+  filter(phys_active != "No")
+
+# "|" is OR, "," is &; be careful with OR
+
+nhanes_small %>%
+  filter(
+    bmi >= 25,
+    phys_active == "No"
+  )
+
+nhanes_small %>%
+  filter(bmi >= 25 |
+    phys_active == "No")
+
+# Arranging rows ----------------------------------------------------------
+
+# desc(age)
+
+nhanes_small %>%
+  arrange(desc(age), bmi, education)
+
+# Mutating columns --------------------------------------------------------
+
+nhanes_update <- nhanes_small %>%
+  mutate(
+    age_month = age * 12,
+    logged_bmi = log(bmi),
+    age_weeks = age_month * 4,
+    old = if_else(
+      age >= 30,
+      "old",
+      "young"
+    )
+  )
