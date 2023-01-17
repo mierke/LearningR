@@ -26,8 +26,8 @@ nhanes_small %>%
     max_bmi = max(bmi, na.rm = TRUE),
     min_bmi = min(bmi, na.rm = TRUE)
   ) %>%
-    ungroup() %>% 
-    knitr::kable(caption = "Mean values of age and BMI for each diabetes and education status")
+  ungroup() %>%
+  knitr::kable(caption = "Mean values of age and BMI for each diabetes and education status")
 ```
 
 ## Prettier table
@@ -48,13 +48,13 @@ nhanes_small %>%
     mean_bmi = round(mean_bmi, 1),
     # Task 2b.
     education = str_to_sentence(education)
-  ) %>% 
+  ) %>%
   rename(
     # Task 3.
     "Diabetes Status" = diabetes,
     "Education" = education,
     "Mean Age" = mean_age,
     "Mean BMI" = mean_bmi
-  ) %>% 
+  ) %>%
   knitr::kable(caption = "Mean values of Age and BMI for each education and diabetes status.")
 ```
