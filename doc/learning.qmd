@@ -3,6 +3,8 @@ title: "Reproducible documents"
 author: "Rike"
 format: html
 ---
+Friederike Mierke
+- Department of Life Sciences, Chalmers University of Technology
 
 ```{r setup}
 #| include: false
@@ -58,3 +60,19 @@ nhanes_small %>%
   ) %>%
   knitr::kable(caption = "Mean values of Age and BMI for each education and diabetes status.")
 ```
+
+# Intro
+**This** is an *introduction*.
+
+# Methods and Results
+And *here* are some methods **and** results.
+
+## Analysis
+This analysis **is** *fun*.
+```{r}
+2 - 3
+```
+
+
+# Discussion
+Discussion discussion **discussion** discussion *discussion*.
