@@ -178,3 +178,5 @@ write_csv(
     nhanes_small,
     here::here("data/nhanes_small.csv")
 )
+
+
